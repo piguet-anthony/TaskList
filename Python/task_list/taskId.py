@@ -1,3 +1,3 @@
 class TaskId:
-    def __init__(self, id_: int) -> None:
+    def __init__(self, id: int) -> None:
         self.id = id
