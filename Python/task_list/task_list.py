@@ -1,2 +1,3 @@
 class task_list:
-    pass
+    def __init__(self):
+        pass
