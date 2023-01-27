@@ -1,15 +1,16 @@
-import taskId
-import taskDescription
+from . import taskId
+from . import taskDescription
+
 
 class TaskAdd(taskId.TaskId, taskDescription.TaskDescription):
-    def __init__(self, id: int, description: str) -> None:
-        taskId.TaskId.__init__(self,id)
-        taskDescription.TaskDescription.__init__(self,description)
+    def __init__(self, id, description):
+        taskId.TaskId.__init__(self, id)
+        taskDescription.TaskDescription.__init__(self, description)
         self.last_id: int = 0
-        self.tasks = list()
+        self.tasks = dict()
 
-    def ajout_de_tache(self, description: str) -> None:
-        self.__init__(self.next_id(), description)
+    def add_new_task(self):
+        self.tasks[self.last_id] = self.description
 
     def next_id(self) -> int:
         self.last_id += 1

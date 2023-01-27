@@ -1,9 +1,10 @@
-import taskId
-import taskDescription
+from . import taskAdd
 
-class TaskShow(taskId.TaskId, taskDescription.TaskDescription):
-    def __init__(self, id: int, description: str) -> None:
-        taskId.TaskId.__init__(self,id)
-        taskDescription.TaskDescription.__init__(self,description)
+class TaskShow(taskAdd.TaskAdd):
+    def __init__(self, taskList, id, description):
+        taskAdd.TaskAdd.__init__(taskList,id,description)
 
 
+    def show(self):
+        for task in self.tasks:
+            print(task.id + " " + task.description)
