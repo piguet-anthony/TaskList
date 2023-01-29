@@ -5,7 +5,7 @@ class TaskShow(taskAdd.TaskAdd):
         super().__init__(id, description, done)
 
     def show(self):
-        for task in self.tasks:
+        for task in self.list_of_task:
             affichageFinal = str(task.id) + " " + str(task.description) + "etat : "
             etat = "NOT Check"
             if task.done:
